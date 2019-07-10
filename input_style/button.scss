@@ -1,0 +1,225 @@
+/*Input text, password, email, select*/
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], select{ 
+    background-color: #FAFBFB;
+    padding: 20px 10px;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom: 5px solid #EBEDEE;
+    color: #32546D;
+    @extend .font-weight-m;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="number"]::placeholder, .placeholder-select{ 
+    color: #32546D;
+    font-size: 1.143em;
+    @extend .italic;
+    @extend .font-weight-x;
+}
+/*End Input text, password, email, select*/
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield; /* Retirer les flèches des inputs de type number. Firefox */
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+    -webkit-appearance: none; /* Chrome */
+    margin:0;
+}
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+    -o-appearance: none; /* Opera */
+    margin:0
+}
+/*Input radio*/
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-color: white;
+    border: 6px solid #EBEDEE;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border-radius: 50px;
+    height: 38px;
+    width: 38px;
+    margin:0;
+}
+input[type="radio"]:checked {
+    background-color: #32546D;
+    border-color: #EBEDEE;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+}
+input[type="radio"]:checked + .label-check {
+    @extend .font-weight-m;
+}
+/*End Input radio*/
+
+/*Button submit*/
+input[type="submit"] { 
+    text-transform: uppercase;
+    color: white;
+    background-color:#4F6DEF;
+    border:none;
+    font-size: 1.143em;
+}
+input[type="submit"]:hover { 
+    cursor: pointer;
+    background-color:rgb(27, 55, 180);   
+}
+/*End Button submit*/
+
+/*Padding Button login*/
+.padding-bt-login {
+    padding: 30px;
+}
+/*End Padding Button login*/
+
+/*Padding Button next*/
+.padding-bt-next {
+    padding: 20px 80px;
+}
+/*End Padding Button next*/
+
+/*Padding Button file*/
+.padding-bt-file {
+    padding: 15px 30px;
+}
+/*End Padding Button file*/
+
+/*Button file*/
+.bt-file {
+    background-color: #B7B7B7;
+    color:white;
+}
+.bt-file:hover {
+    background-color :#F03E3E ;
+    cursor: pointer;
+}
+input[type="file"]  {
+    display: none;
+}
+.none-file { 
+    color: #B7B7B7;
+    @extend .italic;
+}
+.name-file {
+    display: inline-block;
+    max-width: 400px;
+}
+.title-file {
+    color: #32546D;
+    font-weight: 700;
+}
+/*End Button file*/
+
+/*Width input selon leur block il prenne plus de place*/
+.width-m-input {
+    width: 48%;
+}
+/*End Width input*/
+
+/* ----- Checkbox custom ----- */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+
+    background-color: #C4C4C4;
+    border-radius: 20px;
+    height: 22px;
+    width: 44px;
+
+    position: relative;
+    top: 8px;
+}
+
+input[type="checkbox"]:before {
+    content: "\25CF";
+    position: absolute;
+    left: 24px;
+    top: 1px;
+    font-size:1.1em;
+    color: #F03E3E;
+    background-color: white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 50%;
+}
+
+
+input[type="checkbox"]:checked {
+    position: relative;
+}
+
+input[type="checkbox"]:checked:before {
+    left: 1px; /* Position qui change quand c'est checked */
+    color: #16E1AC;
+}
+/* ----- End Checkbox custom ----- */
+
+/*Button next*/
+.next {
+    font-size:1em;
+    font-family:'AvenirNextLTProBold', sans-serif;
+    color:#B7B7B7;
+}
+/*End Button next*/
+.relative {
+    position: relative;
+}
+
+.triangle2:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    border: medium solid white;
+    border-width: 0px 8px 14px 8px;
+    border-color:transparent transparent #B7B7B7 transparent;
+    right: 25px;
+    top: 30px;
+}
+.triangle3:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    border: medium solid white;
+    border-width: 14px 8px 0px 8px;
+    border-color:#B7B7B7 transparent transparent transparent;
+    right: 25px;
+    top: 45px;  
+}
+select + .triangle3:after {
+    pointer-events: none;
+}
+.triangle2  + .triangle3:after {
+    right: 25px;
+    top: 50px;
+}
+
+/*Responsive button*/
+@media screen and (max-width: 1279px) {
+    input[type="radio"]:checked {
+        background-color: #F03E3E;
+    }  
+    input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, select { 
+        font-size: 1em;
+    }
+    .triangle2:after {
+        right: 10px;
+       
+    }
+    .triangle3:after {
+        right: 10px;
+    }
+    .triangle2  + .triangle3:after {
+        right: 10px;
+    }
+}
+/*End Responsive button*/

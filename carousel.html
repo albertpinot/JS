@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carroussel</title>
+</head>
+<style>
+    .content-carroussel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .marge {
+        margin-left: 30px;
+        margin-right: 30px;
+        color:red;
+        font-size:30px;
+        font-weight: 800;
+    }
+    .marge:hover{
+        cursor: pointer;
+        transform: scale(1.5);
+    }
+    
+</style>
+<body>
+    <div class="content-carroussel">
+        <div> <img id="img1" src=""></div>
+        <div id="left" class="marge"> < </div> 
+        <div>  <img id="img2" src=""></div>
+        <div id="right" class="marge"> > </div> 
+        <div> <img id="img3" src=""></div>
+    </div>
+    <script>
+        // Récupérer les images
+        let getImg1 = document.getElementById('img1');
+        let getImg2 = document.getElementById('img2');
+        let getImg3 = document.getElementById('img3');
+        var i = 1;
+        let img1 = "bien-maison-appartement-lille-1.jpg";
+        let img2 = "bien-maison-appartement-lille-2.jpg";
+        let img3 = "bien-maison-appartement-lille-3.jpg";
+
+        
+        getImg1.src = img1;
+        getImg2.src = img2;
+        getImg3.src = img3;
+
+        function carousel(){
+            if (this.id === "left") {
+                //console.log('gauche')
+                i--;
+            }
+            else if (this.id === "right") {
+                //console.log('droite')
+                i += 1;
+            }
+
+            if (i < 1) { i = 3; }
+            else if (i > 3) { i = 1; }
+            console.log(i);
+            if (i === 1) {
+                getImg1.src = img1;
+                getImg2.src = img2;
+                getImg3.src = img3;
+            }
+            else if (i === 2) {
+                getImg1.src = img3;
+                getImg2.src = img1;
+                getImg3.src = img2;
+            } else {
+                getImg1.src = img2;
+                getImg2.src = img3;
+                getImg3.src = img1;
+            }
+        }
+
+        document.getElementById('left').addEventListener('click',carousel);
+        document.getElementById('right').addEventListener('click',carousel);
+    </script>
+</body>
+</html>

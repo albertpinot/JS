@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>compteur caractère</title>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <h1>Compteur caratères</h1>
+            <textarea id="zone" rows="15" style="width:90%;resize:none;"> </textarea><br>
+            <input id="btCompte" type="button" value="Compter">
+            <p id="affiche"></p>
+        </body>
+        <script>
+            var submit = document.getElementById('btCompte');
+            submit.addEventListener('click',valider);
+            function valider () {
+                taille = document.getElementById('zone').value.length;
+                document.getElementById('affiche').innerHTML = taille;
+            }
+        </script>
+    </html>

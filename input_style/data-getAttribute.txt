@@ -1,0 +1,5 @@
+note js data-xxxx manière de laisser un indice
+
+attribute-html ex : id, class, data-xxxx...
+
+element.getAttribute("attribute-html")

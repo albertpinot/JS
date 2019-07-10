@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test Jquery</title>
+</head>
+<style>
+body {
+    background-color: black;
+}
+
+.nav {
+    height: 48px;
+    align-items: center;
+}
+
+.nav .menu {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    margin-left: auto;
+}
+
+.nav .menu:hover {
+    cursor: pointer;
+}
+
+.nav .menu-list {
+    font-size: 30px;
+}
+#overlay{
+    z-index: -999;
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display:none;
+}
+.menu2 {
+    display: none;
+    color: black;
+    background-color: white; 
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.flex-affichage{
+    display: flex;
+    flex-direction: column;
+}
+</style>
+<body>
+    <nav class="nav">
+        <div class="menu">
+            <div id="burger" class="menu-list">
+                ☰
+            </div>
+            <div class="hide" id="burgerClose" class="menu-list">
+                ❌
+            </div>
+        </div>
+        <div id="menu" class="menu2" >
+                <a href="#">Accueil</a>
+                <a href="#">Contact</a>
+                <a href="#">......</a>
+                <a href="#">Contact</a>
+                <div id="overlay">
+
+
+                </div>
+            </div>
+    </nav>   
+    <script src="jquery.js"></script>         
+    <script>
+        $(document).ready(function(){
+            $("#burger").click(function(){
+                $("#menu").show();
+                $(".hide").show();
+                $("#burger").hide();
+
+            });
+            $("#burgerClose").click(function(){
+                $("#menu").hide();
+                $(".hide").hide();
+                $("#burger").show();
+
+            });
+        });     
+    </script>
+
+      
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+</body>
+</html>

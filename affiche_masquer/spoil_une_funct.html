@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>affiche spoiler</title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <body>
+        <p id="spoil1" class="hide" >Dark vador est le père de Luc</p>
+        <p id="spoil2" class="hide" >keanu reeves est dans Cyberpunk2077 !! </p>
+        <input onclick="spoiler('1')"  type="button" value="spoiler1" id="bt_1">
+        <input onclick="spoiler('2')" type="button" value="spoiler2" id="bt_2">
+        <script>
+            function spoiler(spoiler){
+                document.getElementById('spoil' + spoiler).classList.toggle('hide');
+            }
+          
+ 
+        
+        
+        </script>
+    </body>
+</html>

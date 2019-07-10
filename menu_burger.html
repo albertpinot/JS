@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>test menu burger</title>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .nav {
+            height: 48px;
+            align-items: center;
+        }
+
+        .nav .menu {
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            margin-left: auto;
+        }
+
+        .nav .menu:hover {
+            cursor: pointer;
+        }
+
+        .nav .menu-list {
+            font-size: 30px;
+        }
+        #overlay{
+            z-index: -999;
+            background-color:transparent;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display:none;
+        }
+        .menu2 {
+            display: none;
+            color: black;
+            background-color: white; 
+        }
+        .show {
+            display: block;
+        }
+        .hide {
+            display: none;
+        }
+        .flex-affichage{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <body>
+        
+
+            <nav class="nav">
+                <div class="menu">
+                    <div id="burger" class="menu-list">
+                        ☰
+                    </div>
+                    <div class="hide" id="burgerClose" class="menu-list">
+                        ❌
+                    </div>
+                </div>
+                <div id="menu" class="menu2" >
+                        <a href="#">Accueil</a>
+                        <a href="#">Contact</a>
+                        <a href="#">......</a>
+                        <a href="#">Contact</a>
+                        <div id="overlay">
+        
+        
+                        </div>
+                    </div>
+            </nav>          
+        <script>
+            /*
+            /*écouteur de click
+            document.getElementById("burger").addEventListener("click", menuBurger);
+            document.getElementById("burgerClose").addEventListener("click", menuBurgerClose);
+
+            /*Fonction pour afficher
+            function menuBurger() {
+                /*Affiche le menu
+                document.getElementsByClassName("menu2")[0].style.display = "block";
+                /*Remplace X le ☰
+                document.getElementById("burger").style.display = "none";
+                document.getElementById("burgerClose").style.display = "block";
+            }
+            /*Fonction pour masquer
+            function menuBurgerClose() {
+                /*Masque le menu
+                document.getElementsByClassName("menu2")[0].style.display = "none";
+                /*Remplace X le ☰
+                document.getElementById("burgerClose").style.display = "none";
+                document.getElementById("burger").style.display = "block";
+            }
+            */
+
+            document.getElementById("burger").addEventListener("click", menuBurger);
+            document.getElementById("burgerClose").addEventListener("click", menuBurgerClose);
+
+            /*Fonction pour afficher*/
+            function menuBurger() {
+                /*Affiche le menu*/
+                document.getElementById("menu").classList.add("flex-affichage");
+                /*Remplace X le ☰*/
+                document.getElementById("burger").classList.add("hide");
+                document.getElementById("burgerClose").classList.remove("hide");
+                document.getElementById("overlay").style.display="block";
+            }
+            /*Fonction pour masquer*/
+            function menuBurgerClose() {
+                /*Masque le menu*/
+                document.getElementById("menu").classList.remove("flex-affichage");
+                /*Remplace X le ☰*/
+                document.getElementById("burgerClose").classList.add("hide");
+                document.getElementById("burger").classList.remove("hide");
+            }
+            document.getElementById("overlay").addEventListener("click",function(){
+                this.parentNode.classList.toggle("flex-affichage");
+                document.getElementById("burgerClose").classList.add("hide");
+                document.getElementById("burger").classList.remove("hide");
+            })
+        </script>
+    </body>
+
+</html>

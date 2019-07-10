@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>test_change_block</title>
+  <!--Fichier style-->
+  <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" name="viewport">
+</head>
+
+<body>
+  <div class="sub-menu" style="margin:50px;">
+    <a onclick="loadDoc('maisons')" id="id_maisons" class="link-sub-menu active">Maisons</a>
+    <a onclick="loadDoc('appartements')" id="id_appartements" class="link-sub-menu">Appartements</a>
+    <a onclick="loadDoc('terrains')" id="id_terrains" class="link-sub-menu">Terrains</a> 
+    <a onclick="loadDoc('autres')" id="id_autres" class="link-sub-menu">Autres biens</a>
+  </div>
+  <div class="container-good">
+    <div  class="shadow-good">
+      <div class="img-good">
+          <div><span class="uppercase">Vendu</span></div>
+        <img id="img-bien" src="img/bien.svg"/>
+      </div>
+      <div id ="container-bien" class="flex-good"> <span class="price">100 000 €</span><span class="icon-eye" ></span><span class="icon-heart" ></span></div>
+      <div class="content-background-white">
+          <div> <span class="titre">Maison1 </span><br/><br/>
+          <span class="small">Lille </span></div> 
+      </div>
+    </div>
+    <div  class="shadow-good">
+      <div class="img-good">
+          <div><span class="uppercase">Vendu</span></div>
+        <img id="img-bien-2" src="img/Penguins.jpg"/>
+      </div>
+      <div id ="container-bien" class="flex-good"> <span class="price">200 000 €</span><span class="icon-eye" ></span><span class="icon-heart" ></span></div>
+      <div class="content-background-white">
+          <div> <span class="titre">Maison2 </span><br/><br/>
+          <span class="small">Lens</span></div> 
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    /*document.getElementById("appar").addEventListener("click", function(){
+        document.getElementById("maisons").classList.add("hide");
+    })*/
+    /*Sans boucle*/
+    function getBien(bien) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var obj = JSON.parse(this.responseText);
+          //console.log(JSON.parse(this.responseText));
+          console.log(bien);
+          document.querySelectorAll('.price')[0].innerHTML = obj[bien][0].prix + " €";
+          document.querySelector('.titre').innerHTML = obj[bien][0].titre;
+          document.querySelectorAll('.small')[0].innerHTML = obj[bien][0].desc;
+          document.getElementById('.img-bien').src = obj[bien][0].img;
+          document.querySelectorAll('.price')[1].innerHTML = obj[bien][1].prix + " €";
+          document.querySelector('.titre').innerHTML = obj[bien][1].titre;
+          document.querySelectorAll('.small')[1].innerHTML = obj[bien][1].desc;
+          document.getElementById('.img-bien-2').src = obj[bien][1].img;
+        }
+      };
+      xhttp.open('GET', 'data.json', true);
+      xhttp.setRequestHeader('Content-type', 'application/json'); 
+      xhttp.send();
+    }
+    /*Boucle*/
+    function loadDoc(bien) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var obj = JSON.parse(this.responseText);
+          var i;
+          var size  = document.querySelectorAll('.price').length,
+          size2 = document.querySelectorAll('.titre').length,
+          size3 = document.querySelectorAll('.small').length,
+          size4 = document.querySelectorAll('.img-good img').length;
+          for(i = 0; i < size; i++) {
+            document.querySelectorAll('.price')[i].innerHTML = obj[bien][i].prix + ' €';
+          }     
+          for(i = 0; i < size2; i++) {
+            document.querySelectorAll('.titre')[i].innerHTML = obj[bien][i].titre;
+          }
+          for(i = 0; i < size3; i++) {
+            document.querySelectorAll('.small')[i].innerHTML = obj[bien][i].desc;
+          }
+          for(i =0; i < size4; i++){
+            document.querySelectorAll('.img-good img')[i].src = obj[bien][i].img;
+          }
+          document.querySelector('.active').classList.remove('active');
+          document.getElementById('id_' + bien).classList.add('active');
+        }
+      };
+      xhttp.open("GET", "data.json", true);
+      xhttp.setRequestHeader('Content-type', 'application/json'); 
+      xhttp.send();
+    }
+  </script>
+</body>
+
+</html>

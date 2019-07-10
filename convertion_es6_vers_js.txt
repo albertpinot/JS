@@ -1,0 +1,6 @@
+
+/* ------------ ES6 ------------ */
+const { files } = e.dataTransfer;
+
+/* ------------ JS ------------ */
+const files = e.dataTransfer.files;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>affiche spoiler</title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <body>
+        <p id="spoil1" class="hide" >Dark vador est le père de Luc</p>
+        <p id="spoil2" class="hide" >keanu reeves est dans Cyberpunk2077 !! </p>
+        <input  type="button" data-target="spoil1" value="spoiler1" id="bt_1">
+        <input  type="button" data-target="spoil2" value="spoiler2" id="bt_2">
+        
+        <script>
+            document.addEventListener('DOMContentLoaded',function() {
+                function funct_spoil(event) {
+
+                    var id_target = event.currentTarget.getAttribute("data-target"); // getAttribute récupère l'attribut de "data-target". Dans notre exemple, il récupère "spoil1" ou "spoil2"
+                    var target  = document.getElementById(id_target); // Dans notre exemple, il recupère id="spoil1" ou id="spoil2"
+                    // if (target) {
+                        // if (target.classList.contains("hidden")) {
+                        //     target.classList.remove("hidden");
+                        // }
+                        // else {
+                        //     target.classList.add("hidden"); // Ajout de class="hidden"
+                        // }
+                        
+                        // ----- On peut aussi utiliser classList.toggle() ----- :
+                        target.classList.toggle('hide');
+                
+                    // }
+                }
+                var spoiler = document.querySelectorAll('input');
+                // // ----- Boucle for : -----
+                for (var i=0; i<spoiler.length; i++) {
+                    spoiler[i].addEventListener('click', funct_spoil);
+                }
+                // ----- Boucle for...in (compatible IE6+) : -----
+                /*let i;
+                for (i in spoiler) {
+                    spoiler[i].addEventListener('click', funct_spoil);
+                }*/
+            });
+        
+        // ----- Boucle for...of (ne marche pas avec IE et Edge) : -----
+        // var value;
+        // for (value of spoiler) {
+        //     value.addEventListener('click', funct_spoil);
+        // }
+        </script>
+    </body>
+</html>

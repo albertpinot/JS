@@ -1,0 +1,66 @@
+{  
+    "maisons": [    
+        { 
+          "id" : 1,
+          "img" : "img/bien.svg",
+          "prix" : 100000,      
+          "titre" :"maison1" ,      
+          "desc": "Lille"
+        },    
+        { 
+          "id" : 2,          
+          "img" : "img/Penguins.jpg",
+          "prix": 200000,      
+          "titre" :"maison2" ,
+          "desc" : "Lens"  
+        }
+      ],
+      "appartements" :[    
+        {  
+          "id" : 1,
+          "img" : "img/Penguins.jpg",
+          "prix" : 300000,      
+          "titre" : "appartement1" ,      
+          "desc" : "Arras"
+        },    
+        { 
+          "id" : 2,
+          "img" : "img/bien.svg",        
+          "prix" :210000 ,      
+          "titre" : "appartement2",
+          "desc" :  "Roubaix" 
+        }
+      ],
+     "terrains": [    
+        {
+          "id" : 1,
+          "img" : "img/Penguins.jpg",         
+          "prix" :400000 ,      
+          "titre" : "terrains1",      
+          "desc" : "Lille"
+        },    
+        {
+          "id" : 2,
+          "img" : "img/bien.svg",         
+          "prix" :203000 ,      
+          "titre" : "terrains2" ,
+          "desc" :  "Lièvin"
+        }
+      ],
+      "autres": [
+        {  
+          "id" : 1,
+          "img" : "img/bien.svg",           
+          "prix" :102000 ,      
+          "titre" : "autres1" ,      
+          "desc" : "Achicourt"
+        },
+        { 
+          "id" : 2,
+          "img" : "img/Penguins.jpg",        
+          "prix" :204000,      
+          "titre": "autres2",
+          "desc" :  "Lens"
+        }
+      ]
+  }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>affiche spoiler</title>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <body>
+        <p id="spoil1" class="hide" >Dark vador est le père de Luc</p>
+        <p id="spoil2" class="hide" >keanu reeves est dans Cyberpunk2077 !! </p>
+        <input  type="button" value="spoiler1" id="bt_1">
+        <input  type="button" value="spoiler2" id="bt_2">
+        <script>
+            function afficheMasquerD () {
+                document.getElementById('dark').classList.toggle('hide');
+            } 
+            function afficheMasquerK () {
+                document.getElementById('keanu').classList.toggle('hide');
+            } 
+            document.getElementById('bt_1').addEventListener('click', afficheMasquerD);
+            document.getElementById('bt_2').addEventListener('click', afficheMasquerK);
+        </script>
+    </body>
+</html>
